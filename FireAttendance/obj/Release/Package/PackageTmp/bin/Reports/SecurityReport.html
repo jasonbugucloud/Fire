@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        hr{
+            margin-bottom:24px;
+        }
+        .subtable{
+            margin: 12px 24px 24px 60px;
+            width: 50%;
+        }
+        .subtable caption{
+            text-align: left;
+            font-weight:bold;
+        }
+        th{
+            border-bottom: 1px solid #cccccc;
+        }
+
+    </style>
+</head>
+<body style="font-family:Verdana, sans-serif">
+    <div style="margin: 60px 24px 24px 24px;">
+        <h1 style="margin: 0 auto; width: 80%">CoW Application Interface Security Report</h1>
+        <div style="margin-top: 12px; text-align:right; width: 100%;" id="curdt">{$CurrentDateTime}</div>
+        <hr />
+        <div style="margin-bottom:24px; margin-top:24px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%">App Name</th>
+                        <th style="width: 35%">Description</th>
+                        <th style="width: 30%">App Url</th>
+                        <th style="width: 15%">Active Status</th>
+                    </tr>
+                </thead>
+                <tbody>{$AppList}</tbody>
+            </table>
+        </div>
+        <hr />
+        <div style="margin-top: 24px;font-size:small">Total Applications: {$TotalApps}</div>
+    </div>
+</body>
+</html>

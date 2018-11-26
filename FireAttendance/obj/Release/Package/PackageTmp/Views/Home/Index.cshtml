@@ -1,0 +1,210 @@
+﻿
+<div id="dashboardContainer" ng-controller="dashboardController" class="body-content" ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Shifts">
+                <md-content layout-padding style="width: 10em; margin: 20px;">
+                    <md-datepicker ng-model="todayDate" md-hide-icons="calendar" md-placeholder="Select Date" md-open-on-focus="true"></md-datepicker>
+                </md-content>
+                <md-content layout-padding>
+                    <fieldset style="font-size:small; border: " ng-repeat="roster in TodayRoster track by $index">
+                        <legend style="color: rgb(63,81,181);margin:3px;font-size:small;">{{roster.Apparatus.Text}}</legend>
+                        <div layout="row" layout-xs="column" layout-wrap>
+                            <div ng-repeat="schedule in roster.RosterList track by $index" layout="row">
+                                <label style="margin-right: 3px;">{{schedule.Position}}:</label>
+                                <div style="display: flex; margin-bottom: 5px; min-width: 16em;">
+                                    <div ng-repeat="ff in schedule.Allocations track by $index" style="margin: 0 3px;" class="roster-list">
+                                        <span style="font-weight: bold;">{{ff.FullName}}</span>
+                                        <span class="day-code" style="background: {{ff.Color}}">{{ff.DayCode}}</span>
+                                        <span>[{{ff.Range}}]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </md-content>
+            </md-tab>
+            <md-tab label="Attendance">
+                <md-content layout-padding flex layout="row" layout-align="start center" class="text-center" style="min-width: 100px">
+                    <md-select ng-model="month">
+                        <md-option ng-repeat="m in months" value="{{m}}">{{m}}</md-option>
+                    </md-select>
+                    <md-select ng-model="year">
+                        <md-option ng-repeat="y in years" value="{{y}}">{{y}}</md-option>
+                    </md-select>
+                </md-content>
+                <md-content ng-show="!attendances">
+                    <label style="margin: 0.5em; font-size:large">No attendance records found.</label>
+                </md-content>
+                <md-content class="md-padding" ng-show="attendances">
+                    <div ng-repeat="att in attendances" layout="row" style="width: 20em;margin: 0.5em; justify-content: space-between">
+                        <label flex="40">{{att.Day}}</label>
+                        <label class="day-code" style="background-color: {{att.Color}};">{{att.DayCode}}</label>
+                        <label flex="30">{{att.Range}}</label>
+                    </div>
+                </md-content>
+            </md-tab>
+            <md-tab label="Time Owing">
+                <md-content layout-padding style="width: 10em; margin: 20px;">
+                    <md-button class="md-primary md-fab" aria-label="request" ng-click="showRequestOwingDlg($event)">
+                        <md-tooltip>Request Time Owning</md-tooltip>
+                        <svg><use xlink:href="~/Content/svgs/svg-sprite-content-symbol.svg#ic_add_24px"></use></svg>
+                    </md-button>
+                </md-content>
+                <md-content ng-show="TimeOwingList.length === 0">
+                    <label style="margin: 0.5em; font-size:large">No time owing records found.</label>
+                </md-content>
+                <md-content class="md-padding" ng-show="TimeOwingList.length > 0">
+                    <table>
+                        <thead>
+                            <tr><th></th><th>From</th><th>To</th><th>Hours</th><th>Type</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="to in TimeOwingList">
+                                <td>
+                                    <md-button class="md-icon-button" ng-disabled="to.Status=='Approved'" ng-click="showOwingEditDlg($event, to)">
+                                        <svg><use xlink:href="~/Content/svgs/svg-sprite-image-symbol.svg#ic_edit_24px"></use></svg>
+                                    </md-button>
+                                    <md-button class="md-icon-button" ng-disabled="to.Status=='Approved'" ng-click="deleteOwing($event, to)">
+                                        <svg><use xlink:href="~/Content/svgs/svg-sprite-action-symbol.svg#ic_delete_24px"></use></svg>
+                                    </md-button>
+                                </td>
+                                <td>{{to.StartAt}}</td>
+                                <td>{{to.EndAt}}</td>
+                                <td>{{to.Hours}}</td>
+                                <td>{{to.Type}}</td>
+                                <td>{{to.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-content>
+            </md-tab>
+            <md-tab label="OverTime">
+                <md-content layout-padding style="width: 10em;">
+                    <md-button class="md-primary md-fab" aria-label="request" ng-click="showRequestOTDlg($event)">
+                        <md-tooltip>Request OverTime</md-tooltip>
+                        <svg><use xlink:href="~/Content/svgs/svg-sprite-content-symbol.svg#ic_add_24px"></use></svg>
+                    </md-button>
+                </md-content>
+                <md-content ng-show="TimeOTList.length === 0">
+                    <label style="margin: 0.5em; font-size:large">No overtime records found.</label>
+                </md-content>
+                <md-content class="md-padding" ng-show="TimeOTList.length > 0">
+                    <table>
+                        <thead>
+                            <tr><th></th><th>From</th><th>To</th><th>Hours</th><th>Reason</th><th>Explanation</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="to in TimeOTList">
+                                <td>
+                                    <md-button class="md-icon-button" ng-disabled="to.Status=='Approved'" ng-click="showOTEditDlg($event, to)">
+                                        <svg><use xlink:href="~/Content/svgs/svg-sprite-image-symbol.svg#ic_edit_24px"></use></svg>
+                                    </md-button>
+                                    <md-button class="md-icon-button" ng-disabled="to.Status=='Approved'" ng-click="deleteOT($event, to)">
+                                        <svg><use xlink:href="~/Content/svgs/svg-sprite-action-symbol.svg#ic_delete_24px"></use></svg>
+                                    </md-button>
+                                </td>
+                                <td>{{to.StartAt}}</td>
+                                <td>{{to.EndAt}}</td>
+                                <td>{{to.Hours}}</td>
+                                <td>{{to.Reason}}</td>
+                                <td>{{to.Explanation}}</td>
+                                <td>{{to.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+    <script type="text/ng-template" id="reqOwing.tmpl.html">
+        <md-dialog aria-label="Request Time Owing">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Request Time Owing</h2>
+                </div>
+            </md-toolbar>
+            <md-dialog-content style="min-height: 250px;">
+                <md-input-container class="md-block" style="margin-bottom: 0; margin-top: 0;">
+                    <md-radio-group ng-model="type" class="md-primary">
+                        <md-radio-button value="0">Family Day</md-radio-button>
+                        <md-radio-button value="1">Time Owing</md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Start Date/Time</label>
+                    <input moment-picker format="MM/DD/YYYY HH:mm" start-view="month" min-view="month"
+                           min-date="minScheduleMoment"
+                           ng-model="from" required />
+                </md-input-container>
+                <md-input-container class="md-block atbottom">
+                    <label>End Date/Time</label>
+                    <input moment-picker format="MM/DD/YYYY HH:mm" start-view="month" min-view="month"
+                           min-date="from"
+                           ng-model="to" required />
+                </md-input-container>
+                <span style="color: #DD2C00;">{{error}}</span>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="md-primary md-raised" aria-label="Request" ng-click="ok()">OK</md-button>
+                <md-button aria-label="Cancel" ng-click="cancel()">Cancel</md-button>
+            </md-dialog-actions>
+        </md-dialog>
+    </script>
+    <script type="text/ng-template" id="reqOT.tmpl.html">
+        <md-dialog aria-label="Request OverTime">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Request OverTime</h2>
+                </div>
+            </md-toolbar>
+            <md-dialog-content style="min-height: 250px;">
+                <md-input-container class="md-block" style="margin-bottom: 0; margin-top: 0;">
+                    <md-radio-group ng-model="reason" class="md-primary" style="display: flex; justify-content: space-around">
+                        <md-radio-button value="0">Overtime</md-radio-button>
+                        <md-radio-button value="1">Partial Acting Pay</md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Explanation:</label>
+                    <textarea name="explanation" ng-model="explanation" ng-disabled="reason==0" rows="2" md-select-on-focus></textarea>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Start Date/Time</label>
+                    <input moment-picker format="MM/DD/YYYY HH:mm" start-view="month" min-view="month"
+                           ng-model="from" required />
+                </md-input-container>
+                <md-input-container class="md-block atbottom">
+                    <label>End Date/Time</label>
+                    <input moment-picker format="MM/DD/YYYY HH:mm" start-view="month" min-view="month"
+                           min-date="from"
+                           ng-model="to" required />
+                </md-input-container>
+                <span style="color: #DD2C00;">{{error}}</span>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="md-primary md-raised" aria-label="Request" ng-click="ok()">OK</md-button>
+                <md-button aria-label="Cancel" ng-click="cancel()">Cancel</md-button>
+            </md-dialog-actions>
+        </md-dialog>
+    </script>
+    <script type="text/ng-template" id="notification.tmpl.html">
+        <md-dialog aria-label="TO/OT notification">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Notification</h2>
+                </div>
+            </md-toolbar>
+            <md-dialog-content>
+                <p ng-show="notifyTo">Your <b>Time Owing</b> request(s) has/have been approved.</p>
+                <p ng-show="notifyOt">Your <b>OverTime</b> request(s) has/have been approved.</p>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="md-primary md-raised" aria-label="Request" ng-click="ok()">Got it!</md-button>
+            </md-dialog-actions>
+        </md-dialog>
+    </script>
+</div>

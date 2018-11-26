@@ -1,0 +1,10 @@
+2018-04-03 19:24:17,012 [5] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:17,012 [8] ERROR Error retrieving daily roster records. ORA-28001: the password has expired
+2018-04-03 19:24:37,213 [5] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:40,120 [7] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:43,621 [6] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:47,296 [8] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:50,995 [6] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:53,413 [10] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:55,775 [6] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired
+2018-04-03 19:24:58,017 [6] ERROR Error retrieving fire fighter records by admin. ORA-28001: the password has expired

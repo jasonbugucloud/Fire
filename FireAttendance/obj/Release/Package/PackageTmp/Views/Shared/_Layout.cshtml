@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Team Attendance</title>
+    <base href="@Url.Content("~/")" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/m")
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    @RenderSection("styles", required: false)
+</head>
+<body layout="column" ng-app="ffApp" ng-cloak>
+    <header layout="row" layout-align="space-between center">
+        <div style="padding: 0.5em 0">
+            <img alt="City of Waterloo" src="~/Content/images/logo.png" style="width: 10em; height: 5.1em;" hide-sm hide-xs />
+        </div>
+        <div><h2>@ViewBag.Title</h2></div>
+        <div style="text-align:right;">
+            <span style="color:white" hide-xs>@ViewBag.LoginName</span>
+            <md-button class="md-raised md-primary" onclick="signOut('@User.Identity.Name');">Logout</md-button>
+        </div>
+    </header>
+    @RenderBody()
+    @Scripts.Render("~/bundles/j")
+    @Scripts.Render("~/bundles/a")
+    @Scripts.Render("~/bundles/s")
+</body>
+</html>

@@ -1,0 +1,4 @@
+2018-09-18 22:27:36,225 [54] ERROR Error adding fire fighter time owing hours. Specified cast is not valid.
+2018-09-18 22:30:57,058 [54] ERROR Error adding fire fighter time owing hours. Specified cast is not valid.
+2018-09-18 22:31:28,566 [6] ERROR Error adding fire fighter time owing hours. ORA-00984: column not allowed here
+2018-09-18 22:32:17,737 [54] ERROR Error adding fire fighter time owing hours. ORA-00984: column not allowed here

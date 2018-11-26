@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\FireAttendance</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/10/2013 16:29:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>09/10/2013 16:29:20</publishTime>
+    </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>11/23/2016 23:19:28</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>08/10/2016 16:06:52</publishTime>
+    </File>
+    <File Include="bin/FireAttendance.dll">
+      <publishTime>11/14/2018 20:48:40</publishTime>
+    </File>
+    <File Include="bin/FireAttendance.pdb">
+      <publishTime>11/14/2018 20:48:40</publishTime>
+    </File>
+    <File Include="bin/FireData.dll">
+      <publishTime>11/14/2018 20:48:16</publishTime>
+    </File>
+    <File Include="bin/FireData.pdb">
+      <publishTime>11/14/2018 20:48:16</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/13/2016 23:06:14</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>09/26/2015 10:19:20</publishTime>
+    </File>
+    <File Include="bin/Reports/SecurityReport.html">
+      <publishTime>09/17/2016 18:24:55</publishTime>
+    </File>
+    <File Include="bin/SecurityAdmin.dll">
+      <publishTime>11/14/2018 20:48:15</publishTime>
+    </File>
+    <File Include="bin/SecurityAdmin.pdb">
+      <publishTime>11/14/2018 20:48:15</publishTime>
+    </File>
+    <File Include="bin/Select.Html.dep">
+      <publishTime>11/28/2017 20:27:27</publishTime>
+    </File>
+    <File Include="bin/Select.HtmlToPdf.dll">
+      <publishTime>10/20/2016 13:21:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>01/23/2014 13:57:34</publishTime>
+    </File>
+    <File Include="Content/angular-material.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.layout-attributes.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.layout-attributes.min.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.layouts.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.layouts.ie_fixes.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.layouts.min.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-material.min.css">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/angular-moment-picker.css">
+      <publishTime>09/12/2018 22:42:28</publishTime>
+    </File>
+    <File Include="Content/images/calendar.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/dashboard.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/fire-truck.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/firefighter-silhouette.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/firefighter.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/logo.png">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/images/w.png">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>09/22/2018 11:35:33</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-action-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-alert-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-av-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-communication-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-content-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-device-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-editor-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-file-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-hardware-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-image-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-maps-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-navigation-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-notification-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-places-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-social-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Content/svgs/svg-sprite-toggle-symbol.svg">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/28/2017 21:45:04</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-animate.min.js.map">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria/angular-aria.js">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria/angular-aria.min.js">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-aria/angular-aria.min.js.map">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-material/angular-material-mocks.js">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-material/angular-material.js">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-material/angular-material.min.js">
+      <publishTime>11/28/2017 20:27:24</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.js">
+      <publishTime>11/28/2017 21:44:09</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js">
+      <publishTime>11/28/2017 21:44:08</publishTime>
+    </File>
+    <File Include="Scripts/angular-messages.min.js.map">
+      <publishTime>11/28/2017 21:44:08</publishTime>
+    </File>
+    <File Include="Scripts/angular-mocks.js">
+      <publishTime>11/28/2017 21:45:04</publishTime>
+    </File>
+    <File Include="Scripts/angular-moment-picker.js">
+      <publishTime>03/06/2017 21:28:54</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular-route.min.js.map">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/angular.js">
+      <publishTime>11/28/2017 21:45:04</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>11/28/2017 21:45:03</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js.map">
+      <publishTime>11/28/2017 21:45:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.4.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.4.min.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.12.4.min.map">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>11/28/2017 20:27:25</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>11/28/2017 22:00:31</publishTime>
+    </File>
+    <File Include="Scripts/site.js">
+      <publishTime>11/06/2018 20:25:31</publishTime>
+    </File>
+    <File Include="Scripts/svg4everybody.js">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>11/28/2017 22:00:33</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/16/2018 21:44:50</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Views/Shared/LackofParameter.cshtml">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Views/Shared/SignOut.cshtml">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/28/2017 22:02:34</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/28/2017 20:27:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/14/2018 20:26:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
